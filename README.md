@@ -14,3 +14,15 @@ if err != nil {
   log.Println("Failed to validate password:", err)
 }
 ```
+
+
+## Benchmark
+```
+goos: windows
+goarch: amd64
+pkg: github.com/marcoshuck/password/v1
+cpu: AMD Ryzen 5 5600X 6-Core Processor
+BenchmarkValidatePassword
+BenchmarkValidatePassword-12             2634285               457.5 ns/op
+PASS
+```
