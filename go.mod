@@ -1,4 +1,4 @@
-module password
+module github.com/marcoshuck/password/v1
 
 go 1.19
 
