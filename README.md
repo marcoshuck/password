@@ -15,6 +15,8 @@ if err != nil {
 }
 ```
 
+Play with this package in this [Playground](https://go.dev/play/p/zAhLEuKnmZ1) link.
+
 
 ## Benchmark
 ```
