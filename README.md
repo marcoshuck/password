@@ -3,7 +3,7 @@ Password is a password validation package written in Go used for validating pass
 
 ## Getting started
 ```shell
-go get github.com/marcoshuck/password/v1
+go get github.com/marcoshuck/password
 ```
 
 ## Usage
