@@ -101,7 +101,7 @@ func Validate(password string) error {
 	return nil
 }
 
-// isAlphabeticUppercase returns true if the given char is an lowercase character.
+// isAlphabeticUppercase returns true if the given char is a lowercase character.
 func isAlphabeticLowercase(c rune) bool {
 	return c >= 'a' && c <= 'z'
 }
