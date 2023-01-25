@@ -28,3 +28,13 @@ BenchmarkValidatePassword
 BenchmarkValidatePassword-12             2634285               457.5 ns/op
 PASS
 ```
+
+```
+goos: linux
+goarch: amd64
+pkg: github.com/marcoshuck/password
+cpu: AMD Ryzen 7 PRO 4750U with Radeon Graphics
+BenchmarkValidatePassword
+BenchmarkValidatePassword-16    	 2040268	       597.4 ns/op
+PASS
+```

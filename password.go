@@ -16,6 +16,17 @@ var (
 	ErrConsecutive            = errors.New("password contains values consecutive to each other, 1234, 3456, abcd, efgh")
 )
 
+// Validate returns an error if the given password is not valid according to a set of rules defined by this package.
+//
+//	Validation rules:
+//		- password should be at least 8 characters long
+//		- password should at least have 2 numeric characters
+//		- password should at least have 4 alphabetic characters
+//		- password should at least have 1 special character
+//		- password should at least have 1 uppercase character
+//		- password should not contain adjacent characters with the same value
+//		- password contains an invalid combination of characters: 'asdf', 'qwerty', '1234' or '98765'
+//		- password contains values consecutive to each other, 1234, 3456, abcd, efgh
 func Validate(password string) error {
 	if len(password) < 8 {
 		return ErrLength8
@@ -90,18 +101,23 @@ func Validate(password string) error {
 	return nil
 }
 
-func isAlphabeticLowercase(p int32) bool {
-	return p >= 'a' && p <= 'z'
+// isAlphabeticUppercase returns true if the given char is an lowercase character.
+func isAlphabeticLowercase(c rune) bool {
+	return c >= 'a' && c <= 'z'
 }
 
-func isAlphabeticUppercase(p rune) bool {
-	return p >= 'A' && p <= 'Z'
+// isAlphabeticUppercase returns true if the given char is an uppercase character.
+func isAlphabeticUppercase(c rune) bool {
+	return c >= 'A' && c <= 'Z'
 }
 
+// isNumericChar returns true when the given char is a number.
 func isNumericChar(c rune) bool {
 	return c >= '0' && c <= '9'
 }
 
+// isSpecialChar determines if the given char is a valid special character according to the ASCII table.
+// Some chars have been omitted in order to keep this function simple.
 func isSpecialChar(c rune) bool {
 	return (c >= '!' && c <= '/') || (c >= ':' && c <= '@') || (c >= '[' && c <= '`') || (c >= '{' && c <= '~')
 }
